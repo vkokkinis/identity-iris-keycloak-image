@@ -1,0 +1,7 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: iris-image
+Source: https://github.com/telekom/iris-image
+
+Files: extensions/keycloak-metrics-spi/*
+Copyright: The original authors
+License: Apache-2.0
