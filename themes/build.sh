@@ -2,8 +2,7 @@
 
 # SPDX-FileCopyrightText: 2023 Deutsche Telekom AG
 #
-# SPDX-License-Identifier: CC-BY-4.0
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-License-Identifier: Apache-2.0
 
 themes_DIR="./../themes"
 
