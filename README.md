@@ -118,7 +118,7 @@ This job will build the _IKI_ using Docker commands. It uses the artifacts creat
 
 ### Local
 
-To build custom keycloak image, simply follow the steps outlined in the GitLab example.
+To build IKI, simply follow the steps outlined in the GitLab example.
 
 1. **Build Extensions**: Execute the `build.sh` script located in the `extensions` directory. This will generate
    a new directory named `providers`.
