@@ -4,13 +4,13 @@ SPDX-FileCopyrightText: 2023 Deutsche Telekom AG
 SPDX-License-Identifier: CC0-1.0    
 -->
 
-# Custom Keycloak Image (CKI)
+# Iris Keycloak Image (IKI)
 
 ## About
 
-This project is used for setUp docker image, which will be used as a preconfigured Keycloak to run it as
-identity provider with custom extensions. This _CKI_ based on Keycloak, which comes with
-selected [extensions](https://www.keycloak.org/extensions.html) (here with a prometheus metrics exporter).
+This project is used for setUp docker image, which will be used as a preconfigured Keycloak to run it as the
+identity provider with custom extensions. This _IKI_ comes with selected
+[extensions](https://www.keycloak.org/extensions.html) (here with a prometheus metrics exporter).
 
 ## Original Keycloak Image
 
@@ -101,7 +101,7 @@ Delete the `h2` directory in your `keycloak/data` directory.
 
 ### GitLab Pipeline (example)
 
-To build _CKI_ inside the GitLab pipeline look at the provided `.gitlab-ci.yml` which will have a jobs
+To build _IKI_ inside the GitLab pipeline look at the provided `.gitlab-ci.yml` which will have a jobs
 called `build:extensions` and `build:image`. These steps will build the extensions and the Keycloak image together into
 one Docker image.
 
@@ -112,7 +112,7 @@ These artifacts can then be used for ongoing steps and are needed to build the D
 
 ### build:image
 
-This job will build the _CKI_ using Docker commands. It uses the artifacts created with `build:extensions`.
+This job will build the _IKI_ using Docker commands. It uses the artifacts created with `build:extensions`.
 
 **You still need to provide your registry path (authorization for it) etc. (variables marked with TBP prefix)**
 
