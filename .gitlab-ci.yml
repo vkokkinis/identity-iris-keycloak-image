@@ -1,0 +1,35 @@
+# SPDX-FileCopyrightText: 2023 Deutsche Telekom AG
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# variables with TBP_ (to be provided) prefix must be modified accordingly
+image: $IMAGE_DOCKER_BUILD
+
+variables:
+  IMAGE_DOCKER_BUILD: 'docker:19.03.8'
+  TBP_IMAGE_TAG: ''
+  TBP_IMAGE_REGISTRY: ''
+
+stages:
+- prepare
+- dockerize
+
+build:extensions:
+  image: openjdk:15-jdk-alpine
+  stage: prepare
+  script:
+  - apk add --no-cache bash
+  - cd extensions && ./build.sh
+  - cd ./../themes && chmod +x build.sh && ./build.sh
+  artifacts:
+    paths:
+    - "$CI_PROJECT_DIR/providers/"
+    - "$CI_PROJECT_DIR/themes/"
+  
+build:image:
+  stage: dockerize
+  script:
+    - docker build --no-cache -t $TBP_IMAGE_REGISTRY:$TBP_IMAGE_TAG .
+    - docker push $TBP_IMAGE_REGISTRY:$TBP_IMAGE_TAG
+  dependencies:
+  - build:extensions
