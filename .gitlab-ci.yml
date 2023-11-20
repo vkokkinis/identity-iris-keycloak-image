@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2023 Deutsche Telekom AG
 #
-# SPDX-License-Identifier: CC-BY-4.0
+# SPDX-License-Identifier: CC0-1.0
 
 # variables with TBP_ (to be provided) prefix must be modified accordingly
 image: $IMAGE_DOCKER_BUILD
