@@ -127,6 +127,15 @@ To build IKI, simply follow the steps outlined in the GitLab example.
 3. **Configure Docker**: Adjust the `Dockerfile` to reflect the desired image and configuration settings.
 4. **Docker Image Build**: Proceed to build the Docker image.
 
+### Multi-stage Docker build
+
+Alternatively, you can use the multi-stage Docker build to build the image. This will build the extensions and themes in
+the first stage and then copy them into the final image.
+
+```bash
+  docker build --platform linux/amd64 -t iris -f Dockerfile.multi-stage .
+```
+
 ## Code of Conduct
 
 This project has adopted the [Contributor Covenant](https://www.contributor-covenant.org/) in version 2.1 as our code of conduct. Please see the details in our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). All contributors must abide by the code of conduct.
