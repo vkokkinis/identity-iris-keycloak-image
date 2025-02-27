@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 #desired version of Keycloak
-ARG BASE_IMAGE_TAG=21.1.2
+ARG BASE_IMAGE_TAG=26.0.8
 
 #FROM openjdk:15-jdk-slim AS extensionbuilder
 FROM openjdk:17-jdk-slim AS extensionbuilder
@@ -18,12 +18,12 @@ RUN mkdir -p /app/providers
 
 WORKDIR /app/extensions
 
-RUN ./build.sh 21.1.2
+RUN ./build.sh
 
-#ARG BASE_IMAGE_TAG=21.1.2
+#ARG BASE_IMAGE_TAG=26.0.8
 #FROM quay.io/keycloak/keycloak:$BASE_IMAGE_TAG AS builder
-FROM quay.io/keycloak/keycloak:21.1.2 AS builder
-ENV KEYCLOAK_VERSION=21.1.2
+FROM quay.io/keycloak/keycloak:26.0.8 AS builder
+ENV KEYCLOAK_VERSION=26.0.8
 
 LABEL description="Keycloak Docker image bundled with extensions"
 
