@@ -6,7 +6,6 @@
 ARG BASE_IMAGE_TAG=21.1.2
 
 FROM openjdk:15-jdk-slim AS extensionbuilder
-ENV KEYCLOAK_VERSION=$BASE_IMAGE_TAG
 
 RUN apt-get install -y bash
 
@@ -21,6 +20,7 @@ WORKDIR /app/extensions
 RUN ./build.sh
 
 FROM quay.io/keycloak/keycloak:$BASE_IMAGE_TAG AS builder
+ENV KEYCLOAK_VERSION=$BASE_IMAGE_TAG
 
 LABEL description="Keycloak Docker image bundled with extensions"
 
