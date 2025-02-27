@@ -20,7 +20,8 @@ WORKDIR /app/extensions
 RUN ./build.sh 21.1.2
 
 ARG BASE_IMAGE_TAG=21.1.2
-FROM quay.io/keycloak/keycloak:$BASE_IMAGE_TAG AS builder
+#FROM quay.io/keycloak/keycloak:$BASE_IMAGE_TAG AS builder
+FROM quay.io/keycloak/keycloak:21.1.2 AS builder
 ENV KEYCLOAK_VERSION=$BASE_IMAGE_TAG
 
 LABEL description="Keycloak Docker image bundled with extensions"
