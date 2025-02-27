@@ -8,6 +8,10 @@ ARG BASE_IMAGE_TAG=21.1.2
 FROM openjdk:15-jdk-slim AS extensionbuilder
 
 RUN apt-get install -y bash
+# Install Gradle Added by Vasilis
+RUN apt-get update && apt-get install -y bash wget unzip
+RUN wget https://services.gradle.org/distributions/gradle-7.3-bin.zip
+RUN unzip gradle-7.3-bin.zip -d /opt && ln -s /opt/gradle-7.3/bin/gradle /usr/bin/gradle
 
 RUN mkdir -p /app
 
