@@ -18,7 +18,7 @@ RUN mkdir -p /app/providers
 
 WORKDIR /app/extensions
 
-RUN ./build.sh
+RUN ./build.sh 26.0.8
 
 #ARG BASE_IMAGE_TAG=26.0.8
 #FROM quay.io/keycloak/keycloak:$BASE_IMAGE_TAG AS builder
