@@ -4,6 +4,7 @@
 
 #desired version of Keycloak
 ARG BASE_IMAGE_TAG=21.1.2
+ENV KEYCLOAK_VERSION=$BASE_IMAGE_TAG
 
 FROM openjdk:15-jdk-slim AS extensionbuilder
 
