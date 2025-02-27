@@ -5,8 +5,8 @@
 #desired version of Keycloak
 ARG BASE_IMAGE_TAG=21.1.2
 
-#FROM openjdk:15-jdk-slim AS extensionbuilder
-FROM openjdk:17-jdk-slim AS extensionbuilder
+FROM openjdk:15-jdk-slim AS extensionbuilder
+
 
 RUN apt-get install -y bash
 
