@@ -41,7 +41,8 @@ COPY --from=extensionbuilder /app/providers/ /opt/keycloak/providers/
 ADD themes /opt/keycloak/providers/
 
 WORKDIR /opt/keycloak
-RUN /opt/keycloak/bin/kc.sh build --cache=ispn
+#RUN /opt/keycloak/bin/kc.sh build --cache=ispn #Disabled by Vasilis
+RUN /opt/keycloak/bin/kc.sh build 
 
 #FROM quay.io/keycloak/keycloak:$BASE_IMAGE_TAG
 FROM quay.io/keycloak/keycloak:26.0.8
