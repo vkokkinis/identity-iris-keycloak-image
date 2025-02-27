@@ -34,7 +34,7 @@ function build_keycloak_extension() {
 
     # Run the gradle build with debug output
     echo "Running gradle clean build for $EXTENSION_NAME with Keycloak version $KEYCLOAK_VERSION"
-    ./gradlew clean build --no-daemon -p ./$EXTENSION_NAME -PkeycloakVersion="$KEYCLOAK_VERSION" --stacktrace --info > build_output.log 2>&1
+    ./keycloak-metrics-spi/gradlew clean build --no-daemon -p ./$EXTENSION_NAME -PkeycloakVersion="$KEYCLOAK_VERSION" --stacktrace --info > build_output.log 2>&1
 
     # Check if gradle build was successful
     if [ $? -eq 0 ]; then
